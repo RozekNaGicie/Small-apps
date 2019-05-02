@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css?family=Pacifico');
+
+@mixin backgroundProps($image) {
+    background-image: url($image);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 300px;
+    min-height: 100vh;
+    // border: 1px solid red;
+    flex: 1;
+    // position: fixed;
+}
+
+// variables
+$imageOne: '../images/image_1.jpg';
+$imageTwo: '../images/image_2.jpg';
+$imageThree: '../images/image_3.jpg';
+$imageFour: '../images/image_4.jpg';
+
+// include 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100%;
+    // min-height: 100%;
+    display: flex;
+    font-family: 'Pacifico', cursive, sans-serif;
+    cursor: pointer;
+
+    .container-items-first {
+        @include backgroundProps($imageOne);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        transition: 1s;
+
+        &:hover {
+            flex: 1.5;
+        }
+
+        &>* {
+            color: #fff;
+            font-size: 4vh;
+            // border: 1px solid red;
+        }
+    }
+
+    .container-items-second {
+        @include backgroundProps($imageTwo);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        transition: 1s;
+
+        &:hover {
+            flex: 1.5;
+            // display: flex;
+        }
+
+        &>* {
+            color: #fff;
+            font-size: 4vh;
+            // border: 1px solid red;
+            // position: absolute;
+
+        }
+
+    }
+
+    .container-items-third {
+        @include backgroundProps($imageThree);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        transition: 1s;
+
+        &:hover {
+            flex: 1.5;
+        }
+
+        &>* {
+            color: #fff;
+            font-size: 4vh;
+            // border: 1px solid red;
+        }
+    }
+
+    .container-items-four {
+        @include backgroundProps($imageFour);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        transition: 1s;
+
+        &:hover {
+            flex: 1.5;
+        }
+
+        &>* {
+            color: #fff;
+            font-size: 4vh;
+            // border: 1px solid red;
+        }
+    }
+}
+
+.togglers {
+    &>*:first-child {
+        opacity: 0;
+
+    }
+
+    &>*:last-child {
+        opacity: 0;
+    }
+}
+
+@keyframes slows {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fast {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.toggler-active {
+    &>*:first-child {
+        animation: slows 2s;
+
+
+    }
+
+    &>*:last-child {
+        animation: fast 2s;
+    }
+}
+
+//     &>*:last-child{
+//         @keyframes fast{
+//             0% {
+//                 transform: translateY(1000%);
+//             }
+//             25% {
+//                 transform: translateY(750%);
+//             }
+//             50% {
+//                 transform: translateY(500%);
+//             }
+//             75%{
+//                 transform: translateY(250%);
+//             }
+//             100% {
+//                 transform: translateY(0%);
+//             }
+//         }
+//     }
+// }

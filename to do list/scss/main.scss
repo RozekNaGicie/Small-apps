@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC:400,700&subset=latin-ext');
+
+body {
+    background: #FFDC11;
+}
+
+.add-to-do-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .adding-field {
+        margin-bottom: 50px;
+        margin-top: 30px;
+        text-align: center;
+        button {
+            background-color: Orange; /* Green */
+            border: none;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 4%;
+          }
+    }
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Amatic SC', cursive;
+    font-weight: bold;
+    font-size: 20px;
+    .container-task {
+        width: 500px;
+        height: auto;
+        // border: 2px solid black;
+        background: #FFF;
+        // border:  1px solid grey;
+        border-radius: 5px;
+        box-shadow: 10px 5px 5px grey;
+        @media only screen and (max-width: 520px) {
+            width: 325px;
+            height: auto;
+        }
+
+        .to-do-task {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            border-top: 1px solid grey;
+            border-radius: 2px;
+
+            //    margin: 10%;
+            .checkbox-style {
+                display: flex;
+                // justify-content: center;
+                // flex-direction: column;
+                flex: 0.5;
+
+                input[type=checkbox] {
+                    visibility: hidden;
+                }
+
+                .check-label {
+                    width: 20px;
+                    height: 20px;
+                    border: 1px solid black;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    margin-left: 5px;
+
+                }
+
+                .check-label:after {
+                    content: "";
+                    width: 25px;
+                    height: 10px;
+                    display: inline-block;
+                    border-left: 1px solid black;
+                    border-bottom: 1px solid black;
+                    transform: rotate(-45deg);
+                    margin-bottom: 10px;
+                    opacity: 0;
+                }
+
+                input[type=checkbox]:checked+label:after {
+                    opacity: 1;
+                }
+
+            }
+
+            p {
+                width: 200px;
+                height: 20px;
+                flex: 2;
+                margin-right: 10px;
+            }
+        }
+
+        .to-do-task:hover {
+            background: #fAfAfA;
+        }
+    }
+}
